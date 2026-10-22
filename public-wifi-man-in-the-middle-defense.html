@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>咖啡厅与机场公共Wi-Fi危机重重：中间人攻击与全流量护甲实测 - 隐云机场</title>
+  <meta name="description" content="深入解构机场、酒店及咖啡厅公共开放Wi-Fi下的ARP欺骗与恶意热点截获风险，详解全流量高强度AEAD加密隧道自卫实操。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="scroll-masthead">
+    <div class="masthead-wrap">
+      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
+        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="60%" stop-color="#e2e8f0" />
+              <stop offset="100%" stop-color="#94a3b8" />
+            </linearGradient>
+          </defs>
+          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
+          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
+          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
+          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
+          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
+        </svg>
+      </a>
+      <ul class="scroll-nav-links">
+        <li><a href="index.html#stealth">无痕法度</a></li>
+        <li><a href="index.html#realms">八荒秒应</a></li>
+        <li><a href="index.html#pricing">乾坤资费</a></li>
+        <li><a href="index.html#chivalry">江湖实评</a></li>
+        <li><a href="index.html#faq">隐修答疑</a></li>
+        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
+        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-header">
+    <div class="container">
+      <div class="article-meta-bar">
+        <span>行者卷宗：行者御敌策</span>
+        <span>•</span>
+        <span>立案日期：2026-10-17</span>
+        <span>•</span>
+        <span>读时：约 6 分钟</span>
+      </div>
+      <h1 class="article-h1-title">咖啡厅与机场公共Wi-Fi危机重重：中间人攻击与全流量护甲实测</h1>
+      <p class="article-lead-p">
+        在机场候机厅打开电脑处理紧急工作邮件、在星巴克悠闲点一杯咖啡边刷网页边与客户沟通……这是无数差旅商务人士与自由职业者司空见惯的场景。然而，那些无需密码即可随手连入的公共开放式 Wi-Fi，在资深黑客眼中，几乎等同于完全透明的无防御羊圈。
+      </p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="article-body-wrapper">
+      <article class="article-rich-content">
+        <h2>公共场所免费Wi-Fi背后的“蜜罐”与窃听陷阱</h2>
+        <p>
+          在公共场所，任何人只要携带一台几十元钱的便携式随身 Wi-Fi 或专用无线网卡，就能在几秒钟内广播出一个与官方一模一样同名热点（如 <code>Airport_Free_WiFi</code> 或 <code>Starbucks_Guest</code>）。
+        </p>
+        <h3>伪造热点与ARP欺骗如何无感截获敏感凭据</h3>
+        <p>
+          当手机或电脑因信号记忆自动连接到这台伪造的<strong>恶魔孪生热点（Evil Twin）</strong>后，黑客便成为了所有出站流量的第一道网关。配合局域网 <strong>ARP 欺骗工具</strong>，黑客能够轻易将你的网络请求劫持重定向至伪造的钓鱼页面，甚至利用未经修补的系统漏洞植入恶意脚本。
+        </p>
+
+        <h2>即使访问HTTPS网站，黑客依然能刺探什么？</h2>
+        <p>
+          很多缺乏安全常识的用户以为：“现在的网站全都是 HTTPS 加密了，黑客就算抓包也看不懂密文，所以连公共 Wi-Fi 很安全。”这种侥幸心理往往造成灾难性的后果。
+        </p>
+        <p>
+          事实上，即便是最标准的 HTTPS 通信，在握手阶段发起的 <strong>SNI（服务器名称指示）与 DNS 明文查询</strong> 依旧是未加密的。黑客可以分秒不差地精确记录下你打开了哪家银行的网银、登录了哪个加密邮箱、与哪些敏感商业域名进行了通信交互。在行业知名防务研究机构 <a href="https://tizilab.net/" target="_blank">公共网络安全加速器推荐</a> 的安全测试中显示：在开放式 Wi-Fi 下，黑客仅凭元数据分析就能精准还原受害者 80% 以上的行为画像。
+        </p>
+        <h3>SSL证书伪造剥离与明文元数据泄露风险</h3>
+        <p>
+          不仅如此，黑客还能通过 <strong>SSLStrip（证书剥离）</strong> 工具，诱骗用户忽略浏览器的证书风险告警，将加密连接强行降级为明文 HTTP，窃取包含 Session Token 在内的核心登录凭据。
+        </p>
+
+        <h2>开启全天候加密专线隧道：打造移动中的随身金钟罩</h2>
+        <p>
+          对抗不可信局域网窃听的最根本手段，是让数据包在离开设备网卡之前，就先套上一层无法攻破的现代密码学外衣：
+        </p>
+        <ul>
+          <li><strong>启动端到端高强度 AEAD 加密：</strong>所有通信数据在本地被封装为加密数据流，局域网窃听者只能看到无意义的高熵杂波；</li>
+          <li><strong>强制远程安全 DNS 解析：</strong>不在本地局域网发出任何明文 DNS 查询，彻底抹除访问域名轨迹；</li>
+          <li><strong>激活 Kill-Switch（网络锁）：</strong>在专线由于信号切换发生偶发性重连时，系统自动切断本地直连网卡，杜绝毫秒级的明文数据泄漏。</li>
+        </ul>
+        <h3>Kill-Switch在断流瞬间杜绝真实数据泄露</h3>
+        <p>
+          这一安全防线能够确保手机在进出电梯、Wi-Fi 掉线重连的脆弱间隙，绝不漏出任何一帧明文数据包。
+        </p>
+
+        <h2>行走在外的网络防御生存自检清单</h2>
+        <p>
+          出门在外，防人之心不可无。牢记四条铁律：不连无密码来源不明的野热点；连接公共网络前先启动全流量加密专线；关闭系统内的“文件和打印机共享”；绝不点击任何非官方域名的证书安装提示。披坚执锐、隐迹前行，方能确保在外出差与漫游旅居万无一失。
+        </p>
+      </article>
+
+      <div class="post-back-bar">
+        <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
+        <a href="router-firmware-stealth-gateway.html" style="text-decoration:none;font-weight:700;">启卷下一篇：软路由打造全屋无痕隐身网关 &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="colophon-seal">
+    <div class="container">
+      <ul class="colophon-nav">
+        <li><a href="sitemap.html">网站地图</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="terms.html">服务条款</a></li>
+        <li><a href="privacy.html">隐私政策</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="nav.js" defer></script>
+</body>
+</html>

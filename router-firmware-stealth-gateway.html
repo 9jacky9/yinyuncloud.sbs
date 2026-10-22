@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>软路由打造全屋无痕隐身网关：OpenWrt与PassWall进阶布防 - 隐云机场</title>
+  <meta name="description" content="全方位拆解工控机软路由部署全屋科学上网与无痕隐私网关实战，详解OpenWrt固件选型、PassWall规则调优及双VLAN安全隔离。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="scroll-masthead">
+    <div class="masthead-wrap">
+      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
+        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="60%" stop-color="#e2e8f0" />
+              <stop offset="100%" stop-color="#94a3b8" />
+            </linearGradient>
+          </defs>
+          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
+          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
+          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
+          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
+          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
+        </svg>
+      </a>
+      <ul class="scroll-nav-links">
+        <li><a href="index.html#stealth">无痕法度</a></li>
+        <li><a href="index.html#realms">八荒秒应</a></li>
+        <li><a href="index.html#pricing">乾坤资费</a></li>
+        <li><a href="index.html#chivalry">江湖实评</a></li>
+        <li><a href="index.html#faq">隐修答疑</a></li>
+        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
+        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-header">
+    <div class="container">
+      <div class="article-meta-bar">
+        <span>行者卷宗：全屋结界志</span>
+        <span>•</span>
+        <span>立案日期：2026-10-16</span>
+        <span>•</span>
+        <span>读时：约 6 分钟</span>
+      </div>
+      <h1 class="article-h1-title">软路由打造全屋无痕隐身网关：OpenWrt与PassWall进阶布防</h1>
+      <p class="article-lead-p">
+        在智能家居、手机、平板、多台电脑以及客厅电视盒子构成的庞大现代家庭数码生态中，如果为每一台设备逐个安装配置代理软件，不仅维护成本极高，而且很多物联设备根本不具备安装第三方客户端的能力。构建一台静默守护全屋的软路由透明网关，是极客家庭一劳永逸的终极布防。
+      </p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="article-body-wrapper">
+      <article class="article-rich-content">
+        <h2>为什么极客家庭与工作室倾向于把专线部署在路由器端？</h2>
+        <p>
+          将高速专线前置到家庭局域网的核心网关层，带来了颠覆性的体验升维：
+        </p>
+        <h3>客户端零安装、全屋智能家居与多屏设备无感接入</h3>
+        <p>
+          只要设备接入家中的 Wi-Fi 或插上网线，无需安装任何客户端、无需手动启动开关，原生享受低延迟智能分流。游戏主机（Switch/PS5）联机告别 NAT 限制，Apple TV 4K 开机即看 Netflix 原生画质，手机平板无需担心客户端在后台被系统杀死，全屋设备各得其所。
+        </p>
+
+        <h2>软路由硬件选型与OpenWrt精简固件编译要点</h2>
+        <p>
+          在硬件选购上，追求极致低功耗与稳定性的用户通常选择搭载 Intel N100 或 J4125 的双 Intel i226-V 2.5G 网卡工控小主机。
+        </p>
+        <h3>双网口工控机与x86微型主机的性价比权衡</h3>
+        <p>
+          整机功耗仅 6W~10W，采用被动铝合金鳍片散热，常年开机零噪音。固件方面，切忌使用网络上集成了大量花哨插件的臃肿第三方固件。建议采用基于最新 Linux 稳定内核纯净编译的精简版 <strong>OpenWrt</strong>，只保留核心网络路由组件，确保常年持续无故障运行。
+        </p>
+
+        <h2>PassWall与OpenClash的分流策略精细化调校</h2>
+        <p>
+          在网关插件体系中，<strong>PassWall 2</strong> 与 <strong>OpenClash</strong> 是两大中流砥柱：
+        </p>
+        <ul>
+          <li><strong>主备节点自动故障倒换：</strong>配置自动探测心跳，主用专线偶发波动时毫秒级切换备用通道；</li>
+          <li><strong>中国大陆 IP 与域名白名单直连：</strong>让国内大流量下载完全不占用软路由 CPU 算力，直接硬件 NAT 转发跑满千兆；</li>
+          <li><strong>分流策略精细化绑定：</strong>将客厅 Apple TV 绑定至美区原生住宅节点，将工作电脑绑定至香港高速 BGP 专线。</li>
+        </ul>
+        <p>
+          在知名网络折腾圣经 <a href="https://tizilab.net/" target="_blank">软路由科学上网梯子指南</a> 的推荐配置中，将中国大陆 DNS 与海外 DoH 进行物理隔离，是实现真正全屋无死角零污染的关键一步。
+        </p>
+        <h3>区分访客网络与安全私网的双VLAN隔离方案</h3>
+        <p>
+          利用可网管交换机划分 VLAN，设立独立的“访客 Wi-Fi”。朋友来访连入访客网络时仅能直连公网，杜绝外部不可信设备扫描内网 NAS 私人数据资产。
+        </p>
+
+        <h2>杜绝软路由本地DNS劫持与上游运营商污染</h2>
+        <p>
+          在 OpenWrt 内部配置 <strong>MosDNS</strong> 或 <strong>AdGuard Home</strong>，将全屋 DNS 查询请求在路由器本地建立缓存池。常见域名的二次解析延迟压缩至 0ms，同时在网关层彻底抹除恼人的广告追踪与宽带运营商 DNS 强插劫持。
+        </p>
+
+        <h2>结语：让无痕安全如同清泉流水般流淌在全屋每一个插孔</h2>
+        <p>
+          一套优秀的软路由透明网关系统，就像古代宅邸中精心构筑的机关结界与避风港湾。它消融了一切繁冗的技术门槛，让全家人在无知无觉间，静享全球信息科技带来的便利与自由，真正实现“随风潜入夜，润物细无声”。
+        </p>
+      </article>
+
+      <div class="post-back-bar">
+        <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
+        <a href="zero-trace-stealth-doctrine.html" style="text-decoration:none;font-weight:700;">启卷第一篇：踏雪无痕的数字隐逸哲学 &rarr;</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="colophon-seal">
+    <div class="container">
+      <ul class="colophon-nav">
+        <li><a href="sitemap.html">网站地图</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="terms.html">服务条款</a></li>
+        <li><a href="privacy.html">隐私政策</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="nav.js" defer></script>
+</body>
+</html>
