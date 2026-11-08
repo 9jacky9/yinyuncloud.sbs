@@ -90,7 +90,7 @@
           很多劣质加速服务商口头宣称“零日志”，实则在服务器默认开启了系统审计日志。真正的“无痕法度”，必须在编译内核阶段将日志模块彻底剥离。
         </p>
         <p>
-          在安全评估机构 <a href="https://tizilab.net/" target="_blank">安全匿名梯子实验室</a> 的白盒审计报告中提到：合格的纯内存节点会将 <code>/var/log</code> 直接挂载到临时虚拟内存盘 <code>tmpfs</code>，并将日志级别强行重定向至 <code>/dev/null</code>。不记录、不落盘、不汇聚，才能在根本上阻断任何后顾之忧。
+          在安全评估机构 <a href="#plans" target="_blank">安全匿名梯子实验室</a> 的白盒审计报告中提到：合格的纯内存节点会将 <code>/var/log</code> 直接挂载到临时虚拟内存盘 <code>tmpfs</code>，并将日志级别强行重定向至 <code>/dev/null</code>。不记录、不落盘、不汇聚，才能在根本上阻断任何后顾之忧。
         </p>
         <h3>彻底关闭syslog、access.log与网络会话指针</h3>
         <p>
