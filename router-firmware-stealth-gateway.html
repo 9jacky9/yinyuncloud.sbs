@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>软路由打造全屋无痕隐身网关：OpenWrt与PassWall进阶布防 - 隐云机场</title>
-  <meta name="description" content="全方位拆解工控机软路由部署全屋科学上网与无痕隐私网关实战，详解OpenWrt固件选型、PassWall规则调优及双VLAN安全隔离。">
+  <title>家里设备都想用：在路由器上设置加速服务的利弊与注意事项 - 隐云机场</title>
+  <meta name="description" content="把加速服务设置在路由器上，全家设备都能用，值得吗？介绍路由器方案的适用情况、常见风险以及新手更稳妥的做法。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -48,15 +48,15 @@
   <div class="article-header">
     <div class="container">
       <div class="article-meta-bar">
-        <span>行者卷宗：全屋结界志</span>
+        <span>行者卷宗：设备笔记</span>
         <span>•</span>
-        <span>立案日期：2026-10-16</span>
+        <span>立案日期：2026-11-10</span>
         <span>•</span>
-        <span>读时：约 6 分钟</span>
+        <span>读时：约 7 分钟</span>
       </div>
-      <h1 class="article-h1-title">软路由打造全屋无痕隐身网关：OpenWrt与PassWall进阶布防</h1>
+      <h1 class="article-h1-title">家里设备都想用：在路由器上设置加速服务的利弊与注意事项</h1>
       <p class="article-lead-p">
-        在智能家居、手机、平板、多台电脑以及客厅电视盒子构成的庞大现代家庭数码生态中，如果为每一台设备逐个安装配置代理软件，不仅维护成本极高，而且很多物联设备根本不具备安装多端兼容协议的能力。构建一台静默守护全屋的软路由透明网关，是极客家庭一劳永逸的终极布防。
+        一门开而全家通，听来省事，实则牵一发而动全身。设于何处，各有利弊。
       </p>
     </div>
   </div>
@@ -64,55 +64,23 @@
   <main class="container">
     <div class="article-body-wrapper">
       <article class="article-rich-content">
-        <h2>为什么极客家庭与工作室倾向于把专线部署在路由器端？</h2>
-        <p>
-          将高速专线前置到家庭局域网的核心网关层，带来了颠覆性的体验升维：
-        </p>
-        <h3>客户端零安装、全屋智能家居与多屏设备无感接入</h3>
-        <p>
-          只要设备接入家中的 Wi-Fi 或插上网线，无需安装任何客户端、无需手动启动开关，原生享受低延迟智能分流。游戏主机（Switch/PS5）联机告别 NAT 限制，Apple TV 4K 开机即看 Netflix 原生画质，手机平板无需担心客户端在后台被系统杀死，全屋设备各得其所。
-        </p>
-
-        <h2>软路由硬件选型与OpenWrt精简固件编译要点</h2>
-        <p>
-          在硬件选购上，追求极致低功耗与稳定性的用户通常选择搭载 Intel N100 或 J4125 的双 Intel i226-V 2.5G 网卡工控小主机。
-        </p>
-        <h3>双网口工控机与x86微型主机的性价比权衡</h3>
-        <p>
-          整机功耗仅 6W~10W，采用被动铝合金鳍片散热，常年开机零噪音。固件方面，切忌使用网络上集成了大量花哨插件的臃肿第三方固件。建议采用基于最新 Linux 稳定内核纯净编译的精简版 <strong>OpenWrt</strong>，只保留核心网络路由组件，确保常年持续无故障运行。
-        </p>
-
-        <h2>PassWall与OpenClash的分流策略精细化调校</h2>
-        <p>
-          在网关插件体系中，<strong>PassWall 2</strong> 与 <strong>OpenClash</strong> 是两大中流砥柱：
-        </p>
-        <ul>
-          <li><strong>主备节点自动故障倒换：</strong>配置自动探测心跳，主用专线偶发波动时毫秒级切换备用通道；</li>
-          <li><strong>中国大陆 IP 与域名白名单直连：</strong>让国内大流量下载完全不占用软路由 CPU 算力，直接硬件 NAT 转发跑满千兆；</li>
-          <li><strong>分流策略精细化绑定：</strong>将客厅 Apple TV 绑定至美区原生住宅节点，将工作电脑绑定至香港高速 BGP 专线。</li>
-        </ul>
-        <p>
-          在知名网络折腾圣经 <a href="#plans" target="_blank">软路由科学上网梯子指南</a> 的推荐配置中，将中国大陆 DNS 与海外 DoH 进行物理隔离，是实现真正全屋无死角零污染的关键一步。
-        </p>
-        <h3>区分访客网络与安全私网的双VLAN隔离方案</h3>
-        <p>
-          利用可网管交换机划分 VLAN，设立独立的“访客 Wi-Fi”。朋友来访连入访客网络时仅能直连公网，杜绝外部不可信设备扫描内网 NAS 私人数据资产。
-        </p>
-
-        <h2>杜绝软路由本地DNS劫持与上游运营商污染</h2>
-        <p>
-          在 OpenWrt 内部配置 <strong>MosDNS</strong> 或 <strong>AdGuard Home</strong>，将全屋 DNS 查询请求在路由器本地建立缓存池。常见域名的二次解析延迟压缩至 0ms，同时在网关层彻底抹除恼人的广告追踪与宽带运营商 DNS 强插劫持。
-        </p>
-
-        <h2>结语：让无痕安全如同清泉流水般流淌在全屋每一个插孔</h2>
-        <p>
-          一套优秀的软路由透明网关系统，就像古代宅邸中精心构筑的机关结界与避风港湾。它消融了一切繁冗的技术门槛，让全家人在无知无觉间，静享全球信息科技带来的便利与自由，真正实现“随风潜入夜，润物细无声”。
-        </p>
+<h2>一、路由器方案的好处</h2>
+<p>全家的手机、电视、游戏机都不用单独安装客户端，只占用一个设备名额，对不方便安装软件的设备尤其友好。</p>
+<h2>二、需要面对的麻烦</h2>
+<ul><li>配置较复杂，要了解固件、插件与分流规则。</li><li>路由器性能有限，流量大时可能拖慢整个家庭网络。</li><li>出问题时，全家设备同时受影响。</li><li>固件刷写有风险，操作不当可能导致设备无法使用。</li></ul>
+<h2>三、适合谁</h2>
+<p>家中设备多、又有一定动手能力的用户，可以尝试。如果只是自己和家人的几台手机电脑，直接在设备上使用更省心。</p>
+<h2>四、如果决定尝试</h2>
+<p>先备份路由器当前设置，选用社区口碑良好的固件，保留一台不走代理的备用方案，并在非高峰时段改动，以便出问题时可以快速恢复。</p>
+<h2>五、折中的办法</h2>
+<p>可以单独为电视盒子准备一台小型设备或使用支持的客户端，而不是改动整个路由器，既满足需求，也不影响家庭其他设备。</p>
+<h2>小结</h2>
+<p>路由器方案是进阶选项，不是必选项。先在单设备上熟悉，再决定是否升级。</p>
       </article>
 
       <div class="post-back-bar">
         <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
-        <a href="zero-trace-stealth-doctrine.html" style="text-decoration:none;font-weight:700;">启卷第一篇：踏雪无痕的数字隐逸哲学 &rarr;</a>
+        <a href="zero-trace-stealth-doctrine.html" style="text-decoration:none;font-weight:700;">启卷第一篇：隐私是怎么泄露的：浏览器、账号与网络的三层痕迹</a>
       </div>
     </div>
   </main>
