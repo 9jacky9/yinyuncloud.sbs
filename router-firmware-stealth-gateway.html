@@ -1,100 +1,105 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家里设备都想用：在路由器上设置加速服务的利弊与注意事项 - 隐云机场</title>
-  <meta name="description" content="把加速服务设置在路由器上，全家设备都能用，值得吗？介绍路由器方案的适用情况、常见风险以及新手更稳妥的做法。">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OpenWrt网关配置前先做什么：备份范围、设备兼容与家庭恢复演练</title>
+<meta content="OpenWrt网关配置前先做什么：备份范围、设备兼容与家庭恢复演练，包含操作次序、结果判读与适用条件，帮助读者把实际任务和连接问题分开验证。" name="description"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="scroll-masthead">
-    <div class="masthead-wrap">
-      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
-        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="60%" stop-color="#e2e8f0" />
-              <stop offset="100%" stop-color="#94a3b8" />
-            </linearGradient>
-          </defs>
-          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
-          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
-          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
-          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
-          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
-        </svg>
-      </a>
-      <ul class="scroll-nav-links">
-        <li><a href="index.html#stealth">无痕法度</a></li>
-        <li><a href="index.html#realms">八荒秒应</a></li>
-        <li><a href="index.html#pricing">乾坤资费</a></li>
-        <li><a href="index.html#chivalry">江湖实评</a></li>
-        <li><a href="index.html#faq">隐修答疑</a></li>
-        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
-      </ul>
-      <div class="header-actions">
-        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
-        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="article-header">
-    <div class="container">
-      <div class="article-meta-bar">
-        <span>行者卷宗：设备笔记</span>
-        <span>•</span>
-        <span>立案日期：2026-11-10</span>
-        <span>•</span>
-        <span>读时：约 7 分钟</span>
-      </div>
-      <h1 class="article-h1-title">家里设备都想用：在路由器上设置加速服务的利弊与注意事项</h1>
-      <p class="article-lead-p">
+<header class="scroll-masthead">
+<div class="masthead-wrap">
+<a aria-label="隐云机场首页" class="brand-ink" href="index.html">
+<svg fill="none" viewbox="0 0 170 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bladeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="60%" stop-color="#e2e8f0"></stop>
+<stop offset="100%" stop-color="#94a3b8"></stop>
+</lineargradient>
+</defs>
+<path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6"></path>
+<line stroke="url(#bladeGrad)" stroke-linecap="round" stroke-width="2.5" x1="2" x2="36" y1="36" y2="4"></line>
+<rect fill="#dc2626" height="16" rx="2" width="16" x="22" y="16"></rect>
+<text fill="#ffffff" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" x="24" y="28">无痕</text>
+<text fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" letter-spacing="1.5" x="44" y="27">隐云机场</text>
+</svg>
+</a>
+<ul class="scroll-nav-links">
+<li><a href="index.html#stealth">无痕法度</a></li>
+<li><a href="index.html#realms">八荒秒应</a></li>
+<li><a href="index.html#pricing">乾坤资费</a></li>
+<li><a href="index.html#chivalry">江湖实评</a></li>
+<li><a href="index.html#faq">隐修答疑</a></li>
+<li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+</ul>
+<div class="header-actions">
+<a class="btn-cinnabar-top" href="https://ww012.twilightaff.com/#/?code=A56DH1Af" rel="nofollow" target="_blank">即刻启程</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="nav-toggle">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="article-header">
+<div class="container">
+<div class="article-meta-bar">
+<span>行者卷宗：设备笔记</span>
+<span>•</span>
+<span>立案日期：2026-11-10</span>
+<span>•</span>
+<span>读时：约 7 分钟</span>
+</div>
+<h1 class="article-h1-title">OpenWrt网关配置前先做什么：备份范围、设备兼容与家庭恢复演练</h1>
+<p class="article-lead-p">
         一门开而全家通，听来省事，实则牵一发而动全身。设于何处，各有利弊。
       </p>
-    </div>
-  </div>
-
-  <main class="container">
-    <div class="article-body-wrapper">
-      <article class="article-rich-content">
-<h2>一、路由器方案的好处</h2>
-<p>全家的手机、电视、游戏机都不用单独安装客户端，只占用一个设备名额，对不方便安装软件的设备尤其友好。</p>
-<h2>二、需要面对的麻烦</h2>
-<ul><li>配置较复杂，要了解固件、插件与分流规则。</li><li>路由器性能有限，流量大时可能拖慢整个家庭网络。</li><li>出问题时，全家设备同时受影响。</li><li>固件刷写有风险，操作不当可能导致设备无法使用。</li></ul>
-<h2>三、适合谁</h2>
-<p>家中设备多、又有一定动手能力的用户，可以尝试。如果只是自己和家人的几台手机电脑，直接在设备上使用更省心。</p>
-<h2>四、如果决定尝试</h2>
-<p>先备份路由器当前设置，选用社区口碑良好的固件，保留一台不走代理的备用方案，并在非高峰时段改动，以便出问题时可以快速恢复。</p>
-<h2>五、折中的办法</h2>
-<p>可以单独为电视盒子准备一台小型设备或使用支持的客户端，而不是改动整个路由器，既满足需求，也不影响家庭其他设备。</p>
-<h2>小结</h2>
-<p>路由器方案是进阶选项，不是必选项。先在单设备上熟悉，再决定是否升级。</p>
-      </article>
-
-      <div class="post-back-bar">
-        <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
-        <a href="zero-trace-stealth-doctrine.html" style="text-decoration:none;font-weight:700;">启卷第一篇：隐私是怎么泄露的：浏览器、账号与网络的三层痕迹</a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="colophon-seal">
-    <div class="container">
-      <ul class="colophon-nav">
-        <li><a href="sitemap.html">网站地图</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="terms.html">服务条款</a></li>
-        <li><a href="privacy.html">隐私政策</a></li>
-      </ul>
-    </div>
-  </footer>
-  <script src="nav.js" defer></script>
+</div>
+</div>
+<main class="container">
+<div class="article-body-wrapper">
+<article class="article-rich-content"><div data-swc-article-body="2026-11-16"><h2>路由器上的一个改动可能影响全家</h2>
+<p>将连接服务放到网关，能够改变多台设备的接入方式，也把故障影响从单台电脑扩大到家庭网络。开始前应确认自己有管理权限、设备支持范围与恢复方法。不要因为找到一份同品牌教程就直接刷写固件，同品牌不同型号甚至硬件版本可能需要不同镜像。先把当前可工作的状态保存清楚，再讨论新增功能。</p>
+<h2>第一步记录设备和现有网络结构</h2>
+<p>查看设备型号、硬件修订、当前固件版本、管理地址和上游接入方式。画出光猫、主路由、交换设备与无线接入点的位置，标记哪台设备负责拨号和地址分配。不要只记一个Wi-Fi名字。发生故障时，知道管理入口与实际职责，才能避免将旁路设备重置后误以为主网络也应重新配置。</p>
+<h2>第二步导出配置但理解它的范围</h2>
+<p>OpenWrt官方说明可在LuCI的系统、备份或刷写固件相关页面生成备份归档。下载后存到自己的受控电脑，并注明设备型号与日期。这个归档是配置备份，不应自动理解为包含全部固件、软件包和用户文件的完整镜像。需要恢复什么，就应先确认备份实际覆盖什么，而不是只看到文件下载成功。</p>
+<h2>第三步核对备份列表与额外资料</h2>
+<p>在自己管理的OpenWrt设备上，sysupgrade -l可用于查看备份配置所包含的文件列表。检查额外服务的重要配置是否在范围内，软件包清单与自定义文件也应按当前版本说明单独记录。不要公开分享归档，它可能包含网络密码或凭据。保留备份位置和恢复入口，避免唯一副本放在即将修改的路由器里。</p>
+<h2>第四步准备不依赖无线的管理方式</h2>
+<p>条件允许时使用有线连接进行管理，并确认电脑能够访问当前管理地址。无线配置改变后可能暂时断开，不能把这自动当成设备损坏。预先阅读该型号的官方恢复说明，确认需要的线缆、按键与镜像来源。没有明确恢复办法时，不适合在全家正在工作或上课的时段进行大范围变更。</p>
+<h2>第五步分清安装插件与升级固件</h2>
+<p>新增功能、调整规则和升级系统的风险范围不同，不要为了一个小需求同时改动全部层。若确实需要固件升级，按OpenWrt的设备与版本说明核对镜像以及保留配置的兼容条件。保留设置不是任何跨版本升级都安全的通用选择。应阅读迁移提示，不能为省几分钟而把不兼容配置强行带入新系统。</p>
+<h2>第六步先让一台测试设备接入</h2>
+<p>在当前软件支持的范围内，将测试限制到一台自己可管理的设备或明确的测试目标。验证普通网页、局域网设备和所需外部应用，确认路径符合预期后再考虑扩大范围。不要直接让家中所有电视、摄像头和工作设备承担首次试验。对不需要改变的本地服务，保留原有可用访问方式。</p>
+<h2>第七步观察DNS与路由是否一致</h2>
+<p>网关负责某类流量，不代表终端浏览器没有独立的解析或代理设置。测试设备上检查实际模式，与网关日志对照。若内部设备突然无法按名称访问，先调查解析与局域网规则，不急于关闭全部防火墙。一次只调整一个明确因素，保留前后结果，才能知道问题来自网关还是终端自己的配置。</p>
+<h2>选择服务时问清路由器支持条件</h2>
+<p>参考<a href="https://dajichang.mom/">路由器机场服务比较</a>时，核对支持的核心、订阅格式和设备资源要求，不因套餐页面写多设备就假定适合整屋网关。路由器处理能力、存储和维护方式会影响体验，单台电脑能运行的配置不一定适合小型设备。服务支持与家庭管理能力都应纳入选择。</p>
+<h2>最后演练正常恢复流程</h2>
+<p>先测试停止新增服务后家庭基础网络是否恢复，再按批准的方法重新启用，确认管理入口仍可达。配置恢复只应使用适配设备与版本的归档，不把另一台路由器的完整设置随意导入。真正的恢复演练可以在备用或测试设备完成，不需要反复重置生产中的家庭网关来证明自己有备份。</p>
+<h2>交给家人一张故障联系卡</h2>
+<p>写清管理者、正常网络名称、基础恢复步骤和何时停止继续操作，不把管理员密码贴在公共位置。后续更新前复查备份与兼容说明，变更后验证原有家庭任务。可靠的网关方案不是功能越多越好，而是知道谁能维护、故障会影响哪里，以及怎样在有限步骤内回到可工作的状态。</p><h2>把维护时段提前告诉家人</h2><p>安排改动前确认没有网课、远程会议或重要上传，预留恢复时间。变更记录只需写清原设置、修改目的与验收结果，方便其他管理者接手。若在预定窗口内无法解释故障，先恢复已验证方案，不为了完成安装而让全家长期处在不确定的连接状态。</p></div></article>
+<div class="post-back-bar">
+<a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">← 返回行者风云列表</a>
+<a href="zero-trace-stealth-doctrine.html" style="text-decoration:none;font-weight:700;">启卷第一篇：隐私是怎么泄露的：浏览器、账号与网络的三层痕迹</a>
+</div>
+</div>
+</main>
+<footer class="colophon-seal">
+<div class="container">
+<ul class="colophon-nav">
+<li><a href="sitemap.html">网站地图</a></li>
+<li><a href="about.html">关于我们</a></li>
+<li><a href="terms.html">服务条款</a></li>
+<li><a href="privacy.html">隐私政策</a></li>
+</ul>
+</div>
+</footer>
+<script defer="" src="nav.js"></script>
 </body>
 </html>

@@ -1,100 +1,105 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>咖啡厅、机场、酒店 Wi-Fi：公共网络上网的安全清单 - 隐云机场</title>
-  <meta name="description" content="在咖啡厅、机场、酒店使用公共 Wi-Fi 要注意什么？从识别假热点、使用加密连接、关闭自动连接到登录敏感账号前的检查，整理成一份安全清单。">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>酒店公共Wi-Fi怎样判断可信入口：认证页、证书提示与退房后清理</title>
+<meta content="酒店公共Wi-Fi怎样判断可信入口：认证页、证书提示与退房后清理，包含操作次序、结果判读与适用条件，帮助读者把实际任务和连接问题分开验证。" name="description"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="scroll-masthead">
-    <div class="masthead-wrap">
-      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
-        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="60%" stop-color="#e2e8f0" />
-              <stop offset="100%" stop-color="#94a3b8" />
-            </linearGradient>
-          </defs>
-          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
-          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
-          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
-          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
-          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
-        </svg>
-      </a>
-      <ul class="scroll-nav-links">
-        <li><a href="index.html#stealth">无痕法度</a></li>
-        <li><a href="index.html#realms">八荒秒应</a></li>
-        <li><a href="index.html#pricing">乾坤资费</a></li>
-        <li><a href="index.html#chivalry">江湖实评</a></li>
-        <li><a href="index.html#faq">隐修答疑</a></li>
-        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
-      </ul>
-      <div class="header-actions">
-        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
-        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="article-header">
-    <div class="container">
-      <div class="article-meta-bar">
-        <span>行者卷宗：出行安全</span>
-        <span>•</span>
-        <span>立案日期：2026-11-11</span>
-        <span>•</span>
-        <span>读时：约 6 分钟</span>
-      </div>
-      <h1 class="article-h1-title">咖啡厅、机场、酒店 Wi-Fi：公共网络上网的安全清单</h1>
-      <p class="article-lead-p">
+<header class="scroll-masthead">
+<div class="masthead-wrap">
+<a aria-label="隐云机场首页" class="brand-ink" href="index.html">
+<svg fill="none" viewbox="0 0 170 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bladeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="60%" stop-color="#e2e8f0"></stop>
+<stop offset="100%" stop-color="#94a3b8"></stop>
+</lineargradient>
+</defs>
+<path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6"></path>
+<line stroke="url(#bladeGrad)" stroke-linecap="round" stroke-width="2.5" x1="2" x2="36" y1="36" y2="4"></line>
+<rect fill="#dc2626" height="16" rx="2" width="16" x="22" y="16"></rect>
+<text fill="#ffffff" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" x="24" y="28">无痕</text>
+<text fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" letter-spacing="1.5" x="44" y="27">隐云机场</text>
+</svg>
+</a>
+<ul class="scroll-nav-links">
+<li><a href="index.html#stealth">无痕法度</a></li>
+<li><a href="index.html#realms">八荒秒应</a></li>
+<li><a href="index.html#pricing">乾坤资费</a></li>
+<li><a href="index.html#chivalry">江湖实评</a></li>
+<li><a href="index.html#faq">隐修答疑</a></li>
+<li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+</ul>
+<div class="header-actions">
+<a class="btn-cinnabar-top" href="https://ww012.twilightaff.com/#/?code=A56DH1Af" rel="nofollow" target="_blank">即刻启程</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="nav-toggle">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="article-header">
+<div class="container">
+<div class="article-meta-bar">
+<span>行者卷宗：出行安全</span>
+<span>•</span>
+<span>立案日期：2026-11-11</span>
+<span>•</span>
+<span>读时：约 6 分钟</span>
+</div>
+<h1 class="article-h1-title">酒店公共Wi-Fi怎样判断可信入口：认证页、证书提示与退房后清理</h1>
+<p class="article-lead-p">
         驿站歇脚，须辨真假灯火。公共网络便利，却也是最容易被人做手脚的地方。
       </p>
-    </div>
-  </div>
-
-  <main class="container">
-    <div class="article-body-wrapper">
-      <article class="article-rich-content">
-<h2>一、连接前先核对名称</h2>
-<p>攻击者会建立与店铺同名或近似名称的热点，诱导人连接。最好直接向店员确认网络名称，不要连接名称含糊或无需密码却要求你登录个人信息的热点。</p>
-<h2>二、关闭自动连接</h2>
-<p>手机和电脑默认会自动连接曾用过的网络，这会让设备在不知不觉中连上同名假热点。出门前把自动连接关掉，需要时再手动选择。</p>
-<h2>三、优先使用加密连接</h2>
-<p>访问网站时看网址是否以 https 开头；使用加速服务或虚拟专用网络，可以对连接内容再加一层加密，减少在公共网络里被窥探的风险。</p>
-<h2>四、敏感操作要留心</h2>
-<ul><li>网银、支付、公司系统等操作，尽量改用手机流量。</li><li>登录后及时退出，并忘记该网络。</li><li>不要在陌生设备上保存密码。</li></ul>
-<h2>五、系统和应用保持更新</h2>
-<p>安全更新能修复已知漏洞，出门前确认设备已更新。同时关闭文件共享和不必要的蓝牙、隔空传送功能。</p>
-<h2>小结</h2>
-<p>公共 Wi-Fi 并非不能用，关键是多一分谨慎。养成核对、加密、少做敏感操作的习惯，旅途中上网会安心许多。</p>
-      </article>
-
-      <div class="post-back-bar">
-        <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
-        <a href="router-firmware-stealth-gateway.html" style="text-decoration:none;font-weight:700;">启卷下一篇：家里设备都想用：在路由器上设置加速服务的利弊与注意事项</a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="colophon-seal">
-    <div class="container">
-      <ul class="colophon-nav">
-        <li><a href="sitemap.html">网站地图</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="terms.html">服务条款</a></li>
-        <li><a href="privacy.html">隐私政策</a></li>
-      </ul>
-    </div>
-  </footer>
-  <script src="nav.js" defer></script>
+</div>
+</div>
+<main class="container">
+<div class="article-body-wrapper">
+<article class="article-rich-content"><div data-swc-article-body="2026-11-16"><h2>接上无线不等于进入可信网络</h2>
+<p>酒店大堂、车站或咖啡店可能同时出现多个相似网络名，设备记住的旧名称也不一定属于当前场所。使用公共网络前，先向现场可确认的工作人员核对正式名称与认证方式，不凭信号最强或名字最像就连接。这里的目标是完成正常上网并减少误入风险，不需要扫描其他住客设备或测试场所安全系统。</p>
+<h2>第一步关闭不必要的自动加入</h2>
+<p>在设备已保存网络中检查不再使用的公共接入，按系统提供的忘记或关闭自动加入功能处理。出差期间每次连接前留意网络名称与场所说明。重复名称可能使设备自动连接到不期望的位置，因此方便记忆不等于身份验证。对工作设备还应遵循单位管理要求，不擅自删除受管理配置。</p>
+<h2>第二步识别正常的门户认证流程</h2>
+<p>公共网络有时需要先打开门户接受条款、输入房号或使用场所提供的凭证。确认页面与现场说明一致，尽量使用系统弹出的登录提示或场所明确提供的入口。门户只应要求其正常业务所需的信息；若突然要求个人邮箱密码、银行资料或完整工作账户凭据，应停止并向场所核实，而不是为了联网照单输入。</p>
+<h2>第三步把门户登录与网站登录分开</h2>
+<p>通过门户后，再访问自己原本要用的网站，核对域名和正常的HTTPS状态。不要在一个长得像常用服务的门户页面里直接输入该服务密码。浏览器出现证书错误时，先确认地址、设备时间与网络是否尚未完成认证，不要习惯性点击忽略。场所无线名称正确，也不能证明每个跳转页面都可信。</p>
+<h2>第四步不要随便安装证书或配置</h2>
+<p>普通访客上网若被要求安装根证书、设备管理配置或来源不明的客户端，应先问清必要性与影响。证书可能改变设备对连接身份的信任范围，不能把它当成普通网页弹窗随手确认。工作设备上的要求应交给管理员判断。无法解释的安装请求，不适合通过临时试一试来验证是否安全。</p>
+<h2>第五步减少本机可被访问的服务</h2>
+<p>在Windows选择适合公共场所的网络配置，检查是否有不必要的网络发现或文件共享；其他系统按其当前共享设置核对。不要为了传一份文件而在公共接入上开放整块磁盘。只停止自己明确不需要的共享功能，不随意改动单位远程管理。设备锁屏与本地文件权限同样重要，网络加密不能防止旁人直接操作无人看管的电脑。</p>
+<h2>第六步验证连接工具的先后关系</h2>
+<p>某些连接工具在门户认证完成前无法建立通道，因此先完成场所正常联网，再启用已确认可信的工具。连接成功后用一个无敏感信息的小页面验证，不把状态图标当作所有应用都已受相同保护的证据。浏览器、邮件和其他软件可能采用不同接入方式，关键工作仍应按单位批准流程进行。</p>
+<h2>第七步处理频繁掉线而不泄露资料</h2>
+<p>如果门户反复要求登录，记录发生时间、设备与是否刚休眠，询问场所是否有会话时限或设备数量限制。不要把完整订阅地址发给前台排查，也不应交出工作账户密码。可以用已验证的手机接入完成必要任务，但先核对流量与设备连接方式，避免将未经测试的备用当成一定可靠。</p>
+<h2>认识加密传输的作用范围</h2>
+<p>HTTPS或适当隧道可以保护相应传输环节，但不能把钓鱼网站变成正规网站，也不能修复已安装的不可信软件。目标服务仍可能根据登录账户识别用户。参考<a href="https://dajichang.mom/">旅途公共网络机场比较</a>时，应关注可信客户端、设备兼容和使用说明，而不是把任何工具当作可以放心忽略网址和权限的理由。</p>
+<h2>退房后检查遗留的接入与文件</h2>
+<p>离开场所后按需要忘记该公共网络，关闭临时共享，并检查下载目录中是否留下含敏感内容的文件。若曾在不属于自己的设备登录，按服务提供的会话管理查看并退出相关会话。浏览器隐私模式不一定删除已经下载的文件，清理时要按实际保存位置核对，而不是只关闭一个窗口。</p>
+<h2>为下一次出行保存简短清单</h2>
+<p>清单只需包含核对网络名、确认门户、检查证书提示、使用批准工具和离开后清理五项。提前演练备用接入，让真正需要工作时不必临时研究设置。公共网络使用的可靠性来自清楚的入口、合理的设备权限和可恢复的连接安排；保持这些步骤，比相信一个免费热点或安全图标可以承担全部判断更实际。</p><p>共享设备离开座位前先锁屏，随身带走必要的存储设备。网络连接是否加密，与别人能否直接看到屏幕或复制本地文件，是两种不同的保护问题。</p></div></article>
+<div class="post-back-bar">
+<a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">← 返回行者风云列表</a>
+<a href="router-firmware-stealth-gateway.html" style="text-decoration:none;font-weight:700;">启卷下一篇：家里设备都想用：在路由器上设置加速服务的利弊与注意事项</a>
+</div>
+</div>
+</main>
+<footer class="colophon-seal">
+<div class="container">
+<ul class="colophon-nav">
+<li><a href="sitemap.html">网站地图</a></li>
+<li><a href="about.html">关于我们</a></li>
+<li><a href="terms.html">服务条款</a></li>
+<li><a href="privacy.html">隐私政策</a></li>
+</ul>
+</div>
+</footer>
+<script defer="" src="nav.js"></script>
 </body>
 </html>

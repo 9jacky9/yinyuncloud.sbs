@@ -1,98 +1,107 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>隐私是怎么泄露的：浏览器、账号与网络的三层痕迹 - 隐云机场</title>
-  <meta name="description" content="上网留下的痕迹不只在网络层。从浏览器指纹与缓存、账号登录记录、网络连接信息三层说明隐私如何泄露，并给出每一层可以做的简单防护。">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>无痕浏览能清掉哪些记录：本机文件、账户历史与网络信息分开处理</title>
+<meta content="无痕浏览能清掉哪些记录：本机文件、账户历史与网络信息分开处理，包含操作次序、结果判读与适用条件，帮助读者把实际任务和连接问题分开验证。" name="description"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="scroll-masthead">
-    <div class="masthead-wrap">
-      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
-        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="60%" stop-color="#e2e8f0" />
-              <stop offset="100%" stop-color="#94a3b8" />
-            </linearGradient>
-          </defs>
-          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
-          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
-          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
-          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
-          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
-        </svg>
-      </a>
-      <ul class="scroll-nav-links">
-        <li><a href="index.html#stealth">无痕法度</a></li>
-        <li><a href="index.html#realms">八荒秒应</a></li>
-        <li><a href="index.html#pricing">乾坤资费</a></li>
-        <li><a href="index.html#chivalry">江湖实评</a></li>
-        <li><a href="index.html#faq">隐修答疑</a></li>
-        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
-      </ul>
-      <div class="header-actions">
-        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
-        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="article-header">
-    <div class="container">
-      <div class="article-meta-bar">
-        <span>行者卷宗：隐私笔记</span>
-        <span>•</span>
-        <span>立案日期：2026-11-15</span>
-        <span>•</span>
-        <span>读时：约 6 分钟</span>
-      </div>
-      <h1 class="article-h1-title">隐私是怎么泄露的：浏览器、账号与网络的三层痕迹</h1>
-      <p class="article-lead-p">
+<header class="scroll-masthead">
+<div class="masthead-wrap">
+<a aria-label="隐云机场首页" class="brand-ink" href="index.html">
+<svg fill="none" viewbox="0 0 170 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bladeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="60%" stop-color="#e2e8f0"></stop>
+<stop offset="100%" stop-color="#94a3b8"></stop>
+</lineargradient>
+</defs>
+<path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6"></path>
+<line stroke="url(#bladeGrad)" stroke-linecap="round" stroke-width="2.5" x1="2" x2="36" y1="36" y2="4"></line>
+<rect fill="#dc2626" height="16" rx="2" width="16" x="22" y="16"></rect>
+<text fill="#ffffff" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" x="24" y="28">无痕</text>
+<text fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" letter-spacing="1.5" x="44" y="27">隐云机场</text>
+</svg>
+</a>
+<ul class="scroll-nav-links">
+<li><a href="index.html#stealth">无痕法度</a></li>
+<li><a href="index.html#realms">八荒秒应</a></li>
+<li><a href="index.html#pricing">乾坤资费</a></li>
+<li><a href="index.html#chivalry">江湖实评</a></li>
+<li><a href="index.html#faq">隐修答疑</a></li>
+<li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+</ul>
+<div class="header-actions">
+<a class="btn-cinnabar-top" href="https://ww012.twilightaff.com/#/?code=A56DH1Af" rel="nofollow" target="_blank">即刻启程</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="nav-toggle">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="article-header">
+<div class="container">
+<div class="article-meta-bar">
+<span>行者卷宗：隐私笔记</span>
+<span>•</span>
+<span>立案日期：2026-11-15</span>
+<span>•</span>
+<span>读时：约 6 分钟</span>
+</div>
+<h1 class="article-h1-title">无痕浏览能清掉哪些记录：本机文件、账户历史与网络信息分开处理</h1>
+<p class="article-lead-p">
         行者出门，先看脚下留痕。网络之上，痕迹同样一层叠一层，先弄清楚在哪里，才谈得上收敛。
       </p>
-    </div>
-  </div>
-
-  <main class="container">
-    <div class="article-body-wrapper">
-      <article class="article-rich-content">
-<h2>第一层：浏览器留下了什么</h2>
-<p>浏览器会保存历史记录、缓存、Cookie，还会向网站暴露屏幕尺寸、字体、语言、插件等信息，这些组合起来能形成相对独特的“指纹”。想减少暴露，可以定期清理缓存，使用隐私模式处理敏感操作，并避免安装来路不明的插件。</p>
-<h2>第二层：账号登录的痕迹</h2>
-<p>同一个账号在不同地点、不同设备上登录，平台都会记录。使用通用账号登录各个网站，也会让不同网站之间的行为更容易被关联。重要账号建议开启两步验证，并为不同用途准备不同的邮箱。</p>
-<h2>第三层：网络连接的信息</h2>
-<p>你的公网地址、所属运营商以及访问的域名，都会被沿途设备看到。使用加密连接（网址以 https 开头）可以保护页面内容；使用加速服务则能让网站看到的出口地址与你本地不同，但也意味着你需要信任所选服务商，选择时要看清它的隐私说明。</p>
-<h2>一份收敛痕迹的小清单</h2>
-<ul><li>敏感操作用隐私窗口，用完关闭。</li><li>重要账号开启两步验证。</li><li>不同用途使用不同邮箱。</li><li>优先访问 https 网站。</li><li>阅读服务商的隐私政策，了解它记录什么。</li></ul>
-<h2>小结</h2>
-<p>隐私保护没有一招制胜，更像是持续的习惯。把三层痕迹逐一收敛，已经能避开大多数不必要的暴露。</p>
-      </article>
-
-      <div class="post-back-bar">
-        <a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">&larr; 返回行者风云列表</a>
-        <a href="chivalric-stealth-yinyun.html" style="text-decoration:none;font-weight:700;">启卷下一篇：隐云机场入门笔记：选节点、定规则、查问题的行者三步</a>
-      </div>
-    </div>
-  </main>
-
-  <footer class="colophon-seal">
-    <div class="container">
-      <ul class="colophon-nav">
-        <li><a href="sitemap.html">网站地图</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="terms.html">服务条款</a></li>
-        <li><a href="privacy.html">隐私政策</a></li>
-      </ul>
-    </div>
-  </footer>
-  <script src="nav.js" defer></script>
+</div>
+</div>
+<main class="container">
+<div class="article-body-wrapper">
+<article class="article-rich-content"><div data-swc-article-body="2026-11-16"><h2>无痕是浏览会话功能，不是隐身证明</h2>
+<p>浏览器的无痕或隐私窗口通常帮助减少会话结束后留在本机的部分浏览资料，但并不让访问者对网站和网络完全不可见。只要登录账户，服务仍可按其规则处理账户活动。理解无痕模式时，先把本机浏览数据、下载文件、网站账户记录和网络连接信息分开，再决定每一类应如何管理。</p>
+<h2>第一类是当前浏览会话的数据</h2>
+<p>以Chrome为例，无痕窗口创建独立会话，关闭所有无痕窗口后，会话中的站点数据与浏览记录按该模式规则处理。只关闭其中一个窗口，其他无痕窗口仍开着时，不能假设会话已完全结束。使用共享设备时，应确认所有相关窗口都已退出，不将屏幕上暂时看不到页面当成已经清理完成。</p>
+<h2>第二类是主动保存的文件与书签</h2>
+<p>下载的文档、截图和保存的书签不会因为无痕会话结束自动全部消失。完成任务后检查实际下载目录、桌面和应用最近打开记录，按自己的资料管理要求处理。若文件已经复制到其他设备或云盘，删除本地一份也不能替代对其他副本的管理。先知道资料保存在哪里，再决定保留或删除。</p>
+<h2>第三类是网站账户里的历史</h2>
+<p>搜索、订单、观看记录、云文档和安全日志可能属于服务端账户资料。浏览器清理本机历史不等于删除这些内容。需要调整时，从服务自己的账户和隐私设置进入，阅读具体功能说明。删除某类活动、退出当前会话和关闭账户是不同动作，不能为了少留一条浏览记录而误操作整个重要账户。</p>
+<h2>第四类是网络与服务方可见的信息</h2>
+<p>不同网络参与者可能看到连接时间、流量或目标相关信息，具体范围取决于协议和部署。无痕模式主要改变浏览器本机保存行为，不会自动改变整个传输路径。即使使用额外连接工具，目标网站仍可能通过账户与会话识别用户。因此隐私判断应说明相对谁、保护哪类资料，而不是笼统说所有痕迹都消失。</p>
+<h2>第一步为自己的场景定义清理目标</h2>
+<p>在家庭共用电脑查资料，可能只是避免下一位使用者看到本机历史；在工作电脑处理客户文件，还涉及单位资料规则；在本人手机使用服务，则可能更关注账户授权。不同目标需要不同措施。先写清要减少哪一种暴露，避免清理了缓存却忘记桌面上的文件，或退出账户后仍保留公开共享链接。</p>
+<h2>第二步查看普通浏览器的数据设置</h2>
+<p>Chrome提供删除浏览数据功能，可以选择时间范围与数据类别。执行前理解历史、Cookie与缓存的区别，删除Cookie可能导致网站退出登录，清缓存不代表删除账户内容。只选择与目标有关的范围，不为解决一个网站问题就盲目清空所有已保存资料。重要工作先保存，避免清理过程中丢失尚未提交的内容。</p>
+<h2>第三步核对同步与其他设备</h2>
+<p>浏览器或账户可能将某些数据同步到其他设备，具体删除效果取决于产品与设置。查看当前是否登录同步账户，以及哪些类别参与同步。不要只在一台电脑看到历史为空，就宣布其他设备与服务端也都已清理。处理后按产品说明复核必要设备，涉及共享家庭账户时还要避免误删其他人的资料。</p>
+<h2>第四步检查不再需要的会话与授权</h2>
+<p>从重要服务的账户安全页面查看已登录设备和连接应用，按实际情况撤销不再使用的授权。更换浏览器或网络地址并不自动终止旧会话。发现无法解释的设备时，通过已知入口处理并更新必要凭据，不在可疑通知页面直接输入密码。账户控制与浏览器本机清理应成为两条独立检查线。</p>
+<h2>选择连接服务时理解资料责任</h2>
+<p>参考<a href="https://dajichang.mom/">隐私管理机场服务比较</a>时，可以比较服务公开的资料说明与设备支持，但其声明不能替浏览器或目标网站清除历史。不要把零日志标签理解为自己设备也不会保存文件。每个参与方负责的数据不同，真正的隐私安排需要把这些范围拼清楚，而不是依赖单一工具承担全部工作。</p>
+<h2>保留必要记录与减少暴露可以兼容</h2>
+<p>订单凭证、工作交接和恢复资料可能有正当保留需要，应放在受控位置并限制访问，而不是为了追求无痕全部删除。公开分享时只提供必要片段，避免把账户名、完整网址参数和私人文件混在截图中。保存与删除都应有目的，越少不一定越好，关键是知道为什么保留以及谁能够读取。</p>
+<h2>用一次完整退出检查收尾</h2>
+<p>结束操作后退出相关账户或会话，关闭全部隐私窗口，检查下载文件与临时分享，再确认设备锁定。将这些步骤写成适合自己场景的短清单。无痕浏览可以是其中一个工具，但只有理解本机、账户和网络三层差异，才能对已经处理与仍然存在的资料作出准确判断。</p></div></article>
+<div class="post-back-bar">
+<a href="wanderer-scrolls.html" style="text-decoration:none;font-weight:700;">← 返回行者风云列表</a>
+<a href="chivalric-stealth-yinyun.html" style="text-decoration:none;font-weight:700;">启卷下一篇：隐云机场入门笔记：选节点、定规则、查问题的行者三步</a>
+</div>
+</div>
+</main>
+<footer class="colophon-seal">
+<div class="container">
+<ul class="colophon-nav">
+<li><a href="sitemap.html">网站地图</a></li>
+<li><a href="about.html">关于我们</a></li>
+<li><a href="terms.html">服务条款</a></li>
+<li><a href="privacy.html">隐私政策</a></li>
+</ul>
+</div>
+</footer>
+<script defer="" src="nav.js"></script>
 </body>
 </html>

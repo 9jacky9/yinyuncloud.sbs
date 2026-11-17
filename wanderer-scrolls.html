@@ -1,194 +1,185 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>行者风云：隐私、排障与上网习惯笔记 - 隐云机场</title>
-  <meta name="description" content="隐云机场行者风云专栏：隐私痕迹、入门三步、断流排查、购买与账号安全、公共网络与路由器设置等实用笔记。">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>行者风云：隐私、排障与上网习惯笔记 - 隐云机场</title>
+<meta content="隐云机场行者风云专栏：隐私痕迹、入门三步、断流排查、购买与账号安全、公共网络与路由器设置等实用笔记。" name="description"/>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- 顶部卷轴卷首导航 -->
-  <header class="scroll-masthead">
-    <div class="masthead-wrap">
-      <a href="index.html" class="brand-ink" aria-label="隐云机场首页">
-        <svg viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="60%" stop-color="#e2e8f0" />
-              <stop offset="100%" stop-color="#94a3b8" />
-            </linearGradient>
-          </defs>
-          <path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6" />
-          <line x1="2" y1="36" x2="36" y2="4" stroke="url(#bladeGrad)" stroke-width="2.5" stroke-linecap="round" />
-          <rect x="22" y="16" width="16" height="16" rx="2" fill="#dc2626" />
-          <text x="24" y="28" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" fill="#ffffff">无痕</text>
-          <text x="44" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" fill="#ffffff" letter-spacing="1.5">隐云机场</text>
-        </svg>
-      </a>
-      <ul class="scroll-nav-links">
-        <li><a href="index.html#stealth">无痕法度</a></li>
-        <li><a href="index.html#realms">八荒秒应</a></li>
-        <li><a href="index.html#pricing">乾坤资费</a></li>
-        <li><a href="index.html#chivalry">江湖实评</a></li>
-        <li><a href="index.html#faq">隐修答疑</a></li>
-        <li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
-      </ul>
-      <div class="header-actions">
-        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-cinnabar-top">即刻启程</a>
-        <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="news-hub-hero">
-    <div class="container">
-      <h1 class="news-hub-title">行者风云</h1>
-      <p class="news-hub-desc">行走网络江湖，记下实用心得：隐私收敛、排障次序与出行安全</p>
-    </div>
-  </div>
-
-  <main class="container">
-    <div class="articles-grid">
-      <!-- 文章 1 -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">隐私笔记</span>
-            <span class="article-read-time">展卷约 6 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="zero-trace-stealth-doctrine.html">隐私是怎么泄露的：浏览器、账号与网络的三层痕迹</a>
-          </h2>
-          <p class="article-card-excerpt">
+<!-- 顶部卷轴卷首导航 -->
+<header class="scroll-masthead">
+<div class="masthead-wrap">
+<a aria-label="隐云机场首页" class="brand-ink" href="index.html">
+<svg fill="none" viewbox="0 0 170 40" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="bladeGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="60%" stop-color="#e2e8f0"></stop>
+<stop offset="100%" stop-color="#94a3b8"></stop>
+</lineargradient>
+</defs>
+<path d="M4 28C10 18 16 8 26 6C22 14 18 24 10 32C7 32 4 30 4 28Z" fill="#3f3f46" fill-opacity="0.6"></path>
+<line stroke="url(#bladeGrad)" stroke-linecap="round" stroke-width="2.5" x1="2" x2="36" y1="36" y2="4"></line>
+<rect fill="#dc2626" height="16" rx="2" width="16" x="22" y="16"></rect>
+<text fill="#ffffff" font-family="'PingFang SC', sans-serif" font-size="9" font-weight="900" x="24" y="28">无痕</text>
+<text fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="900" letter-spacing="1.5" x="44" y="27">隐云机场</text>
+</svg>
+</a>
+<ul class="scroll-nav-links">
+<li><a href="index.html#stealth">无痕法度</a></li>
+<li><a href="index.html#realms">八荒秒应</a></li>
+<li><a href="index.html#pricing">乾坤资费</a></li>
+<li><a href="index.html#chivalry">江湖实评</a></li>
+<li><a href="index.html#faq">隐修答疑</a></li>
+<li><a href="wanderer-scrolls.html" style="color:#f87171;">行者风云</a></li>
+</ul>
+<div class="header-actions">
+<a class="btn-cinnabar-top" href="https://ww012.twilightaff.com/#/?code=A56DH1Af" rel="nofollow" target="_blank">即刻启程</a>
+<button aria-expanded="false" aria-label="切换导航菜单" class="nav-toggle">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="news-hub-hero">
+<div class="container">
+<h1 class="news-hub-title">行者风云</h1>
+<p class="news-hub-desc">行走网络江湖，记下实用心得：隐私收敛、排障次序与出行安全</p>
+</div>
+</div>
+<main class="container">
+<div class="articles-grid">
+<!-- 文章 1 -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">隐私笔记</span>
+<span class="article-read-time">展卷约 6 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="zero-trace-stealth-doctrine.html">无痕浏览能清掉哪些记录：本机文件、账户历史与网络信息分开处理</a>
+</h2>
+<p class="article-card-excerpt">
             隐私泄露往往不在网络一处，而是浏览器、账号和连接三层痕迹叠加的结果。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-15</span>
-          <a href="zero-trace-stealth-doctrine.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-
-      <!-- 文章 2 (品牌核心文章) -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">入门卷宗</span>
-            <span class="article-read-time">展卷约 7 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="chivalric-stealth-yinyun.html">隐云机场入门笔记：选节点、定规则、查问题的行者三步</a>
-          </h2>
-          <p class="article-card-excerpt">
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-15</span>
+<a class="article-read-more" href="zero-trace-stealth-doctrine.html">启卷详阅 →</a>
+</div>
+</article>
+<!-- 文章 2 (品牌核心文章) -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">入门卷宗</span>
+<span class="article-read-time">展卷约 7 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="chivalric-stealth-yinyun.html">隐云机场用于远程读书会：资料领取、共读批注与会后整理的连接清单</a>
+</h2>
+<p class="article-card-excerpt">
             新手三步：先选近的节点，再定好分流规则，遇到问题按固定顺序排查。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-14</span>
-          <a href="chivalric-stealth-yinyun.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-
-      <!-- 文章 3 -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">排障卷宗</span>
-            <span class="article-read-time">展卷约 6 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="deep-packet-inspection-countermeasures.html">连接总被重置、一会儿又能用：常见断流表现与应对办法</a>
-          </h2>
-          <p class="article-card-excerpt">
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-14</span>
+<a class="article-read-more" href="chivalric-stealth-yinyun.html">启卷详阅 →</a>
+</div>
+</article>
+<!-- 文章 3 -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">排障卷宗</span>
+<span class="article-read-time">展卷约 6 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="deep-packet-inspection-countermeasures.html">连接被重置一定是深度检测吗：错误阶段、对照路径与证据边界</a>
+</h2>
+<p class="article-card-excerpt">
             时好时坏的连接往往有迹可循，按表现分类处理比盲目重试更有效。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-13</span>
-          <a href="deep-packet-inspection-countermeasures.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-
-      <!-- 文章 4 -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">账号安全</span>
-            <span class="article-read-time">展卷约 6 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="crypto-anonymous-subscription-guide.html">购买加速服务时怎样保护个人信息：付款、账号与邮箱的注意事项</a>
-          </h2>
-          <p class="article-card-excerpt">
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-13</span>
+<a class="article-read-more" href="deep-packet-inspection-countermeasures.html">启卷详阅 →</a>
+</div>
+</article>
+<!-- 文章 4 -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">账号安全</span>
+<span class="article-read-time">展卷约 6 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="crypto-anonymous-subscription-guide.html">加密货币付款就能匿名订阅吗：订单、链上记录与账户资料的核对清单</a>
+</h2>
+<p class="article-card-excerpt">
             注册用独立邮箱，密码不复用，付款前核对页面与金额，是三条最基本的底线。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-12</span>
-          <a href="crypto-anonymous-subscription-guide.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-
-      <!-- 文章 5 -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">出行安全</span>
-            <span class="article-read-time">展卷约 6 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="public-wifi-man-in-the-middle-defense.html">咖啡厅、机场、酒店 Wi-Fi：公共网络上网的安全清单</a>
-          </h2>
-          <p class="article-card-excerpt">
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-12</span>
+<a class="article-read-more" href="crypto-anonymous-subscription-guide.html">启卷详阅 →</a>
+</div>
+</article>
+<!-- 文章 5 -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">出行安全</span>
+<span class="article-read-time">展卷约 6 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="public-wifi-man-in-the-middle-defense.html">酒店公共Wi-Fi怎样判断可信入口：认证页、证书提示与退房后清理</a>
+</h2>
+<p class="article-card-excerpt">
             公共 Wi-Fi 方便但不可全信，连接前核对名称、使用加密连接、避免处理敏感操作。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-11</span>
-          <a href="public-wifi-man-in-the-middle-defense.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-
-      <!-- 文章 6 -->
-      <article class="article-card">
-        <div>
-          <div class="card-badge-row">
-            <span class="article-cat-tag">设备笔记</span>
-            <span class="article-read-time">展卷约 7 分钟</span>
-          </div>
-          <h2 class="article-card-title">
-            <a href="router-firmware-stealth-gateway.html">家里设备都想用：在路由器上设置加速服务的利弊与注意事项</a>
-          </h2>
-          <p class="article-card-excerpt">
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-11</span>
+<a class="article-read-more" href="public-wifi-man-in-the-middle-defense.html">启卷详阅 →</a>
+</div>
+</article>
+<!-- 文章 6 -->
+<article class="article-card">
+<div>
+<div class="card-badge-row">
+<span class="article-cat-tag">设备笔记</span>
+<span class="article-read-time">展卷约 7 分钟</span>
+</div>
+<h2 class="article-card-title">
+<a href="router-firmware-stealth-gateway.html">OpenWrt网关配置前先做什么：备份范围、设备兼容与家庭恢复演练</a>
+</h2>
+<p class="article-card-excerpt">
             路由器方案省设备名额、全家可用，但配置门槛高，新手建议先从单设备开始。
           </p>
-        </div>
-        <div class="article-card-footer">
-          <span class="article-author-info">行者笔录 · 2026-11-10</span>
-          <a href="router-firmware-stealth-gateway.html" class="article-read-more">启卷详阅 &rarr;</a>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer class="colophon-seal">
-    <div class="container">
-      <ul class="colophon-nav">
-        <li><a href="sitemap.html">网站地图</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="terms.html">服务条款</a></li>
-        <li><a href="privacy.html">隐私政策</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <script src="nav.js" defer></script>
+</div>
+<div class="article-card-footer">
+<span class="article-author-info">行者笔录 · 2026-11-10</span>
+<a class="article-read-more" href="router-firmware-stealth-gateway.html">启卷详阅 →</a>
+</div>
+</article>
+</div>
+</main>
+<footer class="colophon-seal">
+<div class="container">
+<ul class="colophon-nav">
+<li><a href="sitemap.html">网站地图</a></li>
+<li><a href="about.html">关于我们</a></li>
+<li><a href="terms.html">服务条款</a></li>
+<li><a href="privacy.html">隐私政策</a></li>
+</ul>
+</div>
+</footer>
+<script defer="" src="nav.js"></script>
 </body>
 </html>
